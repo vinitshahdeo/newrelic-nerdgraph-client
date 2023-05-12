@@ -1,2 +1,104 @@
-# newrelic-nerdgraph-client
-An API client for NerdGraph—the GraphQL API of New Relic. Supports both synchronous and asynchronous NRQL queries.
+# New Relic NerdGraph API
+
+A Node.js API Client for NerdGraph, the GraphQL API of New Relic that supports both synchronous and asynchronous NRQL queries. 
+
+## Installation
+Install using npm:
+```bash
+npm install newrelic-nerdgraph-api
+```
+
+## Usage
+
+First, you need to obtain an API key from New Relic. You can create one by logging into your New Relic account and navigating to **Account settings** > **API keys**.
+
+After obtaining the API key, you can create an instance of `NerdGraph` by passing it as a parameter to the constructor:
+
+```js
+const NerdGraph = require('newrelic-nerdgraph-api');
+
+const apiKey = '<YOUR_API_KEY_HERE>';
+const client = new NerdGraph(apiKey);
+```
+
+### Sync Query
+
+You can make a synchronous NRQL query using the `query` method:
+
+```js
+const options = {
+  account: '<YOUR_ACCOUNT_ID_HERE>',
+  query: 'SELECT count(*) FROM Transaction SINCE 1 day ago'
+};
+
+client.query(options)
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Async Query
+
+You can make an asynchronous NRQL query using the `query` method with the `async` option set to `true`:
+
+```js
+const options = {
+  account: '<YOUR_ACCOUNT_ID_HERE>',
+  query: 'SELECT count(*) FROM Transaction SINCE 1 day ago',
+  async: true
+};
+
+client.query(options)
+  .then((response) => {
+    const jobId = response.actor.accounts[0].nrqlAsyncQueryResult.jobId;
+    console.log(`Job ID: ${jobId}`);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Polling Async Query
+
+You can poll for the results of an asynchronous NRQL query using the `poll` method:
+
+```js
+const options = {
+  account: '<YOUR_ACCOUNT_ID_HERE>',
+  queryId: '<YOUR_QUERY_ID_HERE>'
+};
+
+client.poll(options)
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Callback
+
+You can use a callback function instead of a promise by passing it as a second parameter:
+
+```js
+const options = {
+  account: '<YOUR_ACCOUNT_ID_HERE>',
+  query: 'SELECT count(*) FROM Transaction SINCE 1 day ago'
+};
+
+client.query(options, (error, data) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log(data);
+  }
+});
+```
+
+## License
+
+This library is released under the MIT License.
