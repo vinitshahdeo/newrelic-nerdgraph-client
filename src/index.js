@@ -44,9 +44,13 @@ class NewRelicNerdGraphAPI {
         if (!options.account) {
             throw new Error('Provide New Relic Account ID');
         }
-    };
+    }
 
     #parseResults(response) {
+        return response?.data?.actor?.account?.nrql?.results;
+    }
+
+    #getQueryId(response) {
         return response?.data?.actor?.account?.nrql?.results;
     }
 
