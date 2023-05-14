@@ -2,6 +2,8 @@
 
 A Node.js API Client for [NerdGraph](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-nrql-tutorial/), the GraphQL API of New Relic that supports both synchronous and asynchronous NRQL queries. [Learn more about NerdGraph](https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/) or try it out — [api.newrelic.com/graphiql](https://api.newrelic.com/graphiql)
 
+[![npm](https://img.shields.io/npm/v/newrelic-nerdgraph-client?label=npm&logo=npm)]()
+
 ## Installation
 Install using npm:
 ```bash
