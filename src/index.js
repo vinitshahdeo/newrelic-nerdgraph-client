@@ -46,12 +46,20 @@ class NewRelicNerdGraphAPI {
         }
     }
 
-    #parseResults(response) {
+    #parseResults(response, options) {
+        if (options.async) {
+            return this.#getQueryProgressOrResults(response);
+        }
+
         return response?.data?.actor?.account?.nrql?.results;
     }
 
-    #getQueryId(response) {
-        return response?.data?.actor?.account?.nrql?.results;
+    #getQueryProgressOrResults(response) {
+        if (response?.data?.actor?.nrqlQueryProgress?.queryProgress?.completed) {
+            return response?.data?.actor?.nrqlQueryProgress?.results;
+        }
+
+        return response?.data?.actor?.nrqlQueryProgress?.queryProgress;
     }
 
     /**
@@ -78,7 +86,11 @@ class NewRelicNerdGraphAPI {
         axios
             .post(this.#endpoint, payload, reqOptions)
             .then((response) => {
-                return callback(null, options.completeResponse ? response.data : this.#parseResults(response.data));
+                if (response?.data?.errors) {
+                    return callback(response?.data?.errors);
+                }
+
+                return callback(null, options.completeResponse ? response.data : this.#parseResults(response.data, options));
             })
             .catch((error) => {
                 return callback(error);

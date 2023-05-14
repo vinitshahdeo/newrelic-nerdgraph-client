@@ -1,6 +1,6 @@
 # New Relic NerdGraph API
 
-A Node.js API Client for NerdGraph, the GraphQL API of New Relic that supports both synchronous and asynchronous NRQL queries. 
+A Node.js API Client for [NerdGraph](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-nrql-tutorial/), the GraphQL API of New Relic that supports both synchronous and asynchronous NRQL queries. [Learn more about NerdGraph](https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/), GraphQL API of New Relic.
 
 ## Installation
 Install using npm:
@@ -10,7 +10,7 @@ npm install newrelic-nerdgraph-api
 
 ## Usage
 
-First, you need to obtain an API key from New Relic. You can create one by logging into your New Relic account and navigating to **Account settings** > **API keys**.
+First, you need to obtain a [User API key from New Relic](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/). You can create one by logging into your New Relic account and navigating to **Account settings** > **API keys**.
 
 After obtaining the API key, you can create an instance of `NerdGraph` by passing it as a parameter to the constructor:
 
@@ -28,7 +28,7 @@ You can make a synchronous NRQL query using the `query` method:
 ```js
 const options = {
   account: '<YOUR_ACCOUNT_ID_HERE>',
-  query: 'SELECT count(*) FROM Transaction SINCE 1 day ago'
+  query: 'SELECT * FROM Transaction SINCE 1 day ago'
 };
 
 client.query(options)
@@ -42,12 +42,14 @@ client.query(options)
 
 ### Async Query
 
+NerdGraph supports [asynchronous NRQL query](https://docs.newrelic.com/docs/apis/nerdgraph/examples/async-queries-nrql-tutorial/). Asynchronous queries run in the background, and you can make follow-up requests to retrieve query results or the query status. 
+
 You can make an asynchronous NRQL query using the `query` method with the `async` option set to `true`:
 
 ```js
 const options = {
   account: '<YOUR_ACCOUNT_ID_HERE>',
-  query: 'SELECT count(*) FROM Transaction SINCE 1 day ago',
+  query: 'SELECT * FROM Transaction SINCE 1 day ago',
   async: true
 };
 
@@ -87,7 +89,7 @@ You can use a callback function instead of a promise by passing it as a second p
 ```js
 const options = {
   account: '<YOUR_ACCOUNT_ID_HERE>',
-  query: 'SELECT count(*) FROM Transaction SINCE 1 day ago'
+  query: 'SELECT * FROM Transaction SINCE 1 day ago'
 };
 
 client.query(options, (error, data) => {
@@ -98,6 +100,10 @@ client.query(options, (error, data) => {
   }
 });
 ```
+
+## Options
+
+Pass `options.completeResponse: true` for getting complete NRQL response.
 
 ## License
 
