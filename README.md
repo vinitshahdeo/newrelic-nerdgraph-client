@@ -130,6 +130,22 @@ client.query(options)
   });
 ```
 
+Below is a sample NRQL response:
+
+```json
+{
+  "data": {
+    "actor": {
+      "account": {
+        "nrql": {
+          "results": []
+        }
+      }
+    }
+  }
+}
+```
+
 ## API Reference
 
 ### `NerdGraph(apiKey: string)`
