@@ -171,6 +171,12 @@ Polls a NerdGraph query using the specified options.
 
 - A promise that resolves with the results of the query if no callback is provided.
 
+## Contributing
+
+Contributions to [newrelic-nerdgraph-client](https://github.com/vinitshahdeo/newrelic-nerdgraph-client) are most welcome!
+
+please [open an issue](https://github.com/vinitshahdeo/newrelic-nerdgraph-client/issues/new) on the GitHub repository. If you want to contribute code, please [fork the repository](https://github.com/vinitshahdeo/newrelic-nerdgraph-client/fork), make your changes, and **submit a pull request**. Your contributions and feedback are most welcome!
+
 ## License
 
-This library is released under the MIT License.
+This library is authored by @[vinitshahdeo](https://github.com/vinitshahdeo) and released under the [MIT License](./LICENSE).
