@@ -112,7 +112,64 @@ client.query(options, (error, data) => {
 
 ## Options
 
-Pass `options.completeResponse: true` for getting complete NRQL response.
+Pass `options.completeResponse: true` for getting complete NRQL response:
+
+```javascript
+const options = {
+  account: '<YOUR_ACCOUNT_ID_HERE>',
+  query: 'SELECT * FROM Transaction SINCE 1 day ago',
+  completeResponse: true
+};
+
+client.query(options)
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+## API Reference
+
+### `NerdGraph(apiKey: string)`
+
+Creates a new instance of the NewRelicNerdGraphAPI class.
+
+**Parameters:**
+
+- `apiKey` The API key to use when making requests to New Relic.
+
+### `query(options: Object, callback?: Function): Promise`
+
+Calls the NerdGraph API with the provided options and either invokes the provided callback or returns a promise.
+
+**Parameters:**
+
+- `options` The options to use when calling the API.
+- `options.account` The account ID to use when calling the API.
+- `options.query` The NRQL query to execute.
+- `options.async` Whether or not to make an asynchronous query.
+- `callback` The optional callback function to invoke with the results of the query.
+
+**Returns:**
+
+- A promise that resolves with the results of the query if no callback is provided.
+
+### `poll(options: Object, callback?: Function): Promise`
+
+Polls a NerdGraph query using the specified options.
+
+**Parameters:**
+
+- `options` The options to use when calling the API.
+- `options.account` The account ID to use when calling the API.
+- `options.queryId` The query ID to poll.
+- `callback` The optional callback function to invoke with the results of the query.
+
+**Returns:**
+
+- A promise that resolves with the results of the query if no callback is provided.
 
 ## License
 
