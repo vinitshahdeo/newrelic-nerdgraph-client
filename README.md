@@ -54,9 +54,14 @@ const options = {
 };
 
 client.query(options)
-  .then((response) => {
-    const jobId = response.actor.accounts[0].nrqlAsyncQueryResult.jobId;
-    console.log(`Job ID: ${jobId}`);
+  .then((data) => {
+    const queryId = data?.queryId;
+
+    if (!queryId) {
+      // Poll the results using this queryId
+    } else {
+      console.log(data);
+    }
   })
   .catch((error) => {
     console.error(error);
@@ -75,7 +80,11 @@ const options = {
 
 client.poll(options)
   .then((data) => {
-    console.log(data);
+    if (data.queryId) {
+      // Poll it again
+    } else {
+      console.log(data);
+    } 
   })
   .catch((error) => {
     console.error(error);
