@@ -110,9 +110,9 @@ client.query(options, (error, data) => {
 });
 ```
 
-## Options
+### Complete NRQL Response
 
-Pass `options.completeResponse: true` for getting complete NRQL response:
+You can get complete NRQL response with `completeResponse` option set to `true`:
 
 ```javascript
 const options = {
