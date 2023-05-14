@@ -9,9 +9,9 @@ author:
 twitter:
   username: Vinit_Shahdeo
   card: summary
-social:
-  name: Vinit Shahdeo
-  links:
-    - https://twitter.com/Vinit_Shahdeo
-    - https://www.linkedin.com/in/vinitshahdeo
-    - https://github.com/vinitshahdeo
+social_links:
+  - { platform: github,         user_url: "https://github.com/vinitshahdeo" }
+  - { platform: linkedin,       user_url: "https://www.linkedin.com/in/vinitshahdeo" }
+  - { platform: twitter,        user_url: "https://twitter.com/vinit_shahdeo" }
+
+
