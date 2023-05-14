@@ -1,5 +1,4 @@
 theme: minima
-title: New Relic NerdGraph API Client
 tagline: A Node.js API Client for NerdGraph
 description: A Node.js API Client for NerdGraph, the GraphQL API of New Relic that supports both synchronous and asynchronous NRQL queries.
 # social links
