@@ -47,6 +47,10 @@ class NewRelicNerdGraphAPI {
     }
 
     #parseResults(response, options) {
+        if (options.queryId) {
+            return this.#parseAsyncResults(response);
+        }
+
         if (options.async) {
             return this.#getQueryProgressOrResults(response);
         }
@@ -55,11 +59,19 @@ class NewRelicNerdGraphAPI {
     }
 
     #getQueryProgressOrResults(response) {
-        if (response?.data?.actor?.nrqlQueryProgress?.queryProgress?.completed) {
-            return response?.data?.actor?.nrqlQueryProgress?.results;
+        if (response?.data?.actor?.account?.nrql?.queryProgress?.completed) {
+            return response?.data?.actor?.account?.nrql?.results;
         }
 
-        return response?.data?.actor?.nrqlQueryProgress?.queryProgress;
+        return response?.data?.actor?.account?.nrql?.queryProgress;
+    }
+
+    #parseAsyncResults (response) {
+        if (response?.data?.actor?.account?.nrqlQueryProgress?.queryProgress?.completed) {
+            return response?.data?.actor?.account?.nrqlQueryProgress?.results;
+        }
+
+        return response?.data?.actor?.account?.nrqlQueryProgress?.queryProgress;
     }
 
     /**
