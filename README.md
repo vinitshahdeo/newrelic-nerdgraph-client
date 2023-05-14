@@ -150,6 +150,8 @@ Below is a sample NRQL response:
 
 ## API Reference
 
+> The API Reference is also available [here](https://vinitshahdeo.github.io/newrelic-nerdgraph-client/).
+
 ### `NerdGraph(apiKey: string)`
 
 Creates a new instance of the NewRelicNerdGraphAPI class.
@@ -193,7 +195,7 @@ Polls a NerdGraph query using the specified options.
 
 Contributions to [newrelic-nerdgraph-client](https://github.com/vinitshahdeo/newrelic-nerdgraph-client) are most welcome!
 
-please [open an issue](https://github.com/vinitshahdeo/newrelic-nerdgraph-client/issues/new) on the GitHub repository. If you want to contribute code, please [fork the repository](https://github.com/vinitshahdeo/newrelic-nerdgraph-client/fork), make your changes, and **submit a pull request**. Your contributions and feedback are most welcome!
+If you find a bug or want to suggest a new feature, please [open an issue](https://github.com/vinitshahdeo/newrelic-nerdgraph-client/issues/new) on the GitHub repository. If you want to contribute code, please [fork the repository](https://github.com/vinitshahdeo/newrelic-nerdgraph-client/fork), make your changes, and **submit a pull request**. Your contributions and feedback are most welcome!
 
 ## License
 
