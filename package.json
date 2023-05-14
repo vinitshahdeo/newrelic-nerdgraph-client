@@ -1,6 +1,6 @@
 {
   "name": "newrelic-nerdgraph-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An API client for NerdGraph — the GraphQL API of New Relic. Supports both synchronous and asynchronous NRQL queries.",
   "main": "src/index.js",
   "scripts": {
