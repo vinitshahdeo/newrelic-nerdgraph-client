@@ -2,7 +2,7 @@
 
 A Node.js API Client for [NerdGraph](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-nrql-tutorial/), the GraphQL API of New Relic that supports both synchronous and asynchronous NRQL queries. [Learn more about NerdGraph](https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/) or try it out — [api.newrelic.com/graphiql](https://api.newrelic.com/graphiql)
 
-[![npm](https://img.shields.io/npm/v/newrelic-nerdgraph-client?label=npm&logo=npm)]()
+[![npm](https://img.shields.io/npm/v/newrelic-nerdgraph-client?label=npm&logo=npm)](https://www.npmjs.com/package/newrelic-nerdgraph-client) [![](https://img.shields.io/badge/NerdGraph-API-green?logo=newrelic)](https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/) ![node-current](https://img.shields.io/node/v/newrelic-nerdgraph-client?logo=node.js)
 
 ## Installation
 Install using npm:
@@ -198,3 +198,5 @@ please [open an issue](https://github.com/vinitshahdeo/newrelic-nerdgraph-client
 ## License
 
 This library is authored by @[vinitshahdeo](https://github.com/vinitshahdeo) and released under the [MIT License](./LICENSE).
+
+[![Twitter Follow](https://img.shields.io/twitter/follow/vinit_shahdeo?style=social)](https://twitter.com/Vinit_Shahdeo)
