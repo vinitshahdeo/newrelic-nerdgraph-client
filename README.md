@@ -7,7 +7,7 @@ A Node.js API Client for [NerdGraph](https://docs.newrelic.com/docs/apis/nerdgra
 ## Installation
 Install using npm:
 ```bash
-npm install newrelic-nerdgraph-api
+npm i newrelic-nerdgraph-client
 ```
 
 ## Usage
