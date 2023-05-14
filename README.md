@@ -1,6 +1,6 @@
 # New Relic NerdGraph API
 
-A Node.js API Client for [NerdGraph](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-nrql-tutorial/), the GraphQL API of New Relic that supports both synchronous and asynchronous NRQL queries. [Learn more about NerdGraph](https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/), GraphQL API of New Relic.
+A Node.js API Client for [NerdGraph](https://docs.newrelic.com/docs/apis/nerdgraph/examples/nerdgraph-nrql-tutorial/), the GraphQL API of New Relic that supports both synchronous and asynchronous NRQL queries. [Learn more about NerdGraph](https://docs.newrelic.com/docs/apis/nerdgraph/get-started/introduction-new-relic-nerdgraph/) or try it out — [api.newrelic.com/graphiql](https://api.newrelic.com/graphiql)
 
 ## Installation
 Install using npm:
@@ -42,7 +42,7 @@ client.query(options)
 
 ### Async Query
 
-NerdGraph supports [asynchronous NRQL query](https://docs.newrelic.com/docs/apis/nerdgraph/examples/async-queries-nrql-tutorial/). Asynchronous queries run in the background, and you can make follow-up requests to retrieve query results or the query status. 
+NerdGraph also supports [asynchronous NRQL query](https://docs.newrelic.com/docs/apis/nerdgraph/examples/async-queries-nrql-tutorial/). Asynchronous queries run in the background, and you can make follow-up requests to retrieve query results or the query status. This type of query avoids a query being interrupted by issues like browser timeouts or HTTP connection timeouts. It's especially useful for **running queries that may take a long time to complete**.
 
 You can make an asynchronous NRQL query using the `query` method with the `async` option set to `true`:
 
