@@ -110,9 +110,25 @@ client.query(options, (error, data) => {
 });
 ```
 
-## Options
+### Complete NRQL Response
 
-Pass `options.completeResponse: true` for getting complete NRQL response.
+You can get complete NRQL response with `completeResponse` option set to `true`:
+
+```javascript
+const options = {
+  account: '<YOUR_ACCOUNT_ID_HERE>',
+  query: 'SELECT * FROM Transaction SINCE 1 day ago',
+  completeResponse: true
+};
+
+client.query(options)
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
 
 ## License
 
