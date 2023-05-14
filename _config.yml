@@ -1,0 +1,17 @@
+theme: minima
+title: New Relic NerdGraph API Client
+tagline: A Node.js API Client for NerdGraph
+description: A Node.js API Client for NerdGraph, the GraphQL API of New Relic that supports both synchronous and asynchronous NRQL queries.
+author:
+  name: Vinit Shahdeo
+  url: https://vinitshahdeo.dev/
+  twitter: Vinit_Shahdeo
+twitter:
+  username: Vinit_Shahdeo
+  card: summary
+social:
+  name: Vinit Shahdeo
+  links:
+    - https://twitter.com/Vinit_Shahdeo
+    - https://www.linkedin.com/in/vinitshahdeo
+    - https://github.com/vinitshahdeo
